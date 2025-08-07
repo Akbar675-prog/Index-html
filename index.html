@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Siswa Kelas VI C</title>
+    <style>
+        body {
+            background-color: #101820;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #07553B;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin: 20px 0;
+            width: 80%;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .student {
+            background-color: #07553B;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 200px;
+            transition: transform 0.2s;
+        }
+
+        .student:hover {
+            transform: scale(1.05);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SDN CIBINONG 03 - Kelas VI C</h1>
+        <input type="text" id="search" placeholder="Cari Siswa..." onkeyup="searchStudent()">
+        <div id="student-list">
+            <div class="student" data-name="Nauval">
+                <img src="https://files.catbox.moe/12luri.jpg" alt="Nauval">
+                <h2>Nauval Akbar Putra Aulia</h2>
+                <p>Jenis Kelamin: Laki - Laki</p>
+                <p>Agama: Islam (Muslim)</p>
+                <p>Umur: 12</p>
+                <p>Tempat Tanggal Lahir: 28 September, 2013</p>
+                <p>Kepribadian: Seorang programer di usia muda.</p>
+                <p>Hobi: Berenang, Mengcoding, Bermain game.</p>
+            </div>
+            <div class="student" data-name="Hosea">
+                <img src="https://files.catbox.moe/5in8h9.jpg" alt="Hosea">
+                <h2>Hosea Ergasito</h2>
+                <p>Jenis Kelamin: Laki - Laki</p>
+                <p>Agama: Kristen (protestan)</p>
+                <p>Umur: 10 - 12 an</p>
+                <p>Tempat Tanggal Lahir: -</p>
+                <p>Kepribadian: -</p>
+                <p>Hobi: -</p>
+            </div>
+            <div class="student" data-name="Rasyid">
+                <img src="https://files.catbox.moe/elw02k.jpg" alt="Rasyid">
+                <h2>Muhammad Harun Arrasyid</h2>
+                <p>Jenis Kelamin: Laki - Laki</p>
+                <p>Agama: Islam (Muslim)</p>
+                <p>Umur: 10 - 11</p>
+                <p>Tempat Tanggal Lahir: -</p>
+                <p>Kepribadian: Sering bercanda dikelas.</p>
+                <p>Hobi: Makan.</p>
+            </div>
+            <div class="student" data-name="Fabio">
+                <img src="https://files.catbox.moe/w51u7n.jpg" alt="Fabio">
+                <h2>Fabio Reinhart Arianto</h2>
+                <p>Jenis Kelamin: Laki - Laki</p>
+                <p>Agama: Islam (Muslim)</p>
+                <p>Umur: 10 - 12</p>
+                <p>Tempat Tanggal Lahir: -</p>
+                <p>Kepribadian: Pintar pada bidang pelajaran agama Islam.</p>
+                <p>Hobi: Bermain, Makan.</p>
+            </div>
+        </div>
+        <button onclick="showTerms()">Term of Service</button>
+    </div>
+    <script>
+        function searchStudent() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const students = document.querySelectorAll('.student');
+
+            students.forEach(student => {
+                const name = student.getAttribute('data-name').toLowerCase();
+                if (name.includes(input)) {
+                    student.style.display = '';
+                } else {
+                    student.style.display = 'none';
+                }
+            });
+        }
+
+        function showTerms() {
+            alert("Term of Service: \n1. Data siswa hanya untuk keperluan pendidikan.\n2. Dilarang menyebarluaskan informasi tanpa izin.\n3. Penggunaan aplikasi ini adalah tanggung jawab pengguna.");
+        }
+    </script>
+</body>
+</html>
